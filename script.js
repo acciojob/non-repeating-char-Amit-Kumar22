@@ -1,11 +1,23 @@
 //your JS code here. If required.
-var string = aabbcdd;
-function firstNonRepeatedCharacter(string) {
-  for (var i = 0; i < string.length; i++) {
-    var c = string.charAt(i);
-    if (string.indexOf(c) == i && string.indexOf(c, i + 1) == -1) {
-      return c;
+
+const string = "aabbcdd";
+let index = -1;
+let fnc = ' ';
+ 
+if(string.length == 0){
+console.log("EMPTY STRING");
+}
+ 
+for (let i of string) {
+    if (string.split(i).length - 1 === 1) {
+        fnc = i;
+        break;
+    } else {
+        index += 1;
     }
-  }
-  return null;
+}
+if (index === string.length-1) {
+    console.log("All characters are repeating.");
+} else {
+    console.log(`${fnc}`);
 }
